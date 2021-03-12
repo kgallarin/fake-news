@@ -1,0 +1,25 @@
+@mixin max-instrinsic-width {
+  max-width: intrinsic;
+  max-width: -moz-max-content;
+  max-width: -webkit-max-content;
+}
+
+@mixin instrinsic-width {
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+}
+
+@mixin instrinsic-height {
+  height: intrinsic;
+  height: -moz-max-content;
+  height: -webkit-max-content;
+}
+
+@mixin font-settings($style, $stretch, $spacing, $lnheight, $weight) {
+  font-style: $style;
+  font-stretch: $stretch;
+  letter-spacing: $spacing;
+  line-height: $lnheight;
+  font-weight: $weight;
+}

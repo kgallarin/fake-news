@@ -1,0 +1,23 @@
+.me {
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 12px;
+  input, label { font-size: 12px; }
+  &-info {
+    text-align: right;
+    border: 1px solid #202020;
+    border-radius: 4px;
+    &__created {
+      font-size: 10px;
+    }
+    &__name {
+      font-size: 12px;
+    }
+    &__inner {
+      background-color: #202020;
+      padding: 15px;
+    }
+  }
+}
