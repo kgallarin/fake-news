@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12">
           <v-text-field
-            v-model="last"
+            v-model="filter"
             label="Filter"
             solo-inverted
             hide-details
@@ -19,27 +19,29 @@
 export default {
   name: 'FilterForm',
   data: () => ({
-    password: 'Password',
-    show: false,
-    last: '',
+    filter: '',
   }),
-
   computed: {
     icon() {
       return this.icons[this.iconIndex];
     },
   },
-
+  watch: {
+    filter(n) {
+      if (n !== '') {
+        this.$store.dispatch('news/FETCH_NEWS', {
+          q: n,
+        });
+      } else {
+        this.$store.dispatch('news/FETCH_NEWS', {
+          q: 'latest',
+        });
+      }
+    },
+  },
   methods: {
-    toggleMarker() {
-      this.marker = !this.marker;
-    },
-    sendMessage() {
-      this.resetIcon();
-      this.clearMessage();
-    },
     clearMessage() {
-      this.message = '';
+      this.filter = '';
     },
   },
 };

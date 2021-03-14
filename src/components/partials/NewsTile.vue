@@ -1,13 +1,8 @@
 <template>
   <v-card height='100%' color='blue' class='pt-1 pb-1'>
-    <template v-if="!loading">
-      <v-card-title>{{item.title}}</v-card-title>
-      <v-img :src='item.img' @load="onLoad"></v-img>
-      <v-card-text>{{item.text}}</v-card-text>
-    </template>
-    <template v-else>
-      <p>loading ...</p>
-    </template>
+    <v-card-title>{{item.title}}</v-card-title>
+    <v-img v-if='item.urlToImage' :src='item.urlToImage' @load="onLoad"></v-img>
+    <v-card-text>{{item.description}}</v-card-text>
   </v-card>
 </template>
 
