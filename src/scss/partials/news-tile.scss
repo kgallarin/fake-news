@@ -1,0 +1,39 @@
+.v-card {
+  &.news-tile {
+    border-top-left-radius: 0;
+    background-color: #202020 !important;
+
+    &.theme--dark {
+      background-color: #202020 !important;
+      .link-to { 
+        color: #fff !important; 
+      }
+    }
+    &.theme--light {
+      background-color: #fff !important;
+      .link-to { 
+        color: #202020 !important;
+      }
+    }
+    
+    &:hover {
+      .v-image {
+        filter: grayscale(100%);
+      }
+    }
+  }
+}
+
+.tile-toolbar {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  
+  .link-item {
+    font-size: 12px;
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+  }
+}

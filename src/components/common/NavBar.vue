@@ -11,7 +11,7 @@
         transition="scale-transition"
         width="40"
       />
-      News
+      OeiNews
     </div>
     <v-spacer></v-spacer>
     <v-switch

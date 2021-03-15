@@ -1,0 +1,10 @@
+.link-to {
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #fff;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
