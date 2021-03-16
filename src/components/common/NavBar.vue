@@ -2,7 +2,7 @@
   <v-app-bar
     app
     class="main-appbar">
-    <div class="d-flex align-center">
+    <div @click.stop="routeHome" class="d-flex align-center">
       <v-img
         alt="Vuetify Logo"
         class="shrink mr-2"
@@ -32,6 +32,11 @@
 export default {
   name: 'NavBar',
   data: () => ({ }),
+  methods: {
+    routeHome() {
+      this.$router.push({ name: 'home' });
+    },
+  },
 };
 </script>
 <style lang="scss">

@@ -34,7 +34,7 @@
             color="blue darken-1"
             text
             :disabled="!valid"
-            @click="validate"
+            @click="saveTitle"
           >
             Save
           </v-btn>

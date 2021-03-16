@@ -49,11 +49,12 @@ export default {
   },
   created() {
     this.$emit('isLoaded');
+    this.onLoad();
   },
   watch: {
-    item(n) {
-      if (n) {
-        this.submittedTitle = '';
+    'item.title': function (newVal) {
+      if (newVal) {
+        this.onLoad();
       }
     },
   },
@@ -68,10 +69,9 @@ export default {
     handleTitle(item) {
       this.$store.dispatch('pop_gallery/HEADER_TTL', true);
       this.$store.commit('news_tile/SET_ACTIVE_NEWS', item);
-      console.log(item);
     },
     handleLink(item) {
-      console.log('PUTA KA RIN', item);
+      this.$router.push({ name: 'single-news', params: { id: item.title, data: item } });
     },
   },
 };

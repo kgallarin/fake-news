@@ -1,5 +1,8 @@
 import DashboardLayout from '@/layouts/dashboard.vue';
+import SingleLayout from '@/layouts/single.vue';
+
 import landingRoutes from '@/components/pages/Home/routes';
+import singleNewsRoutes from '@/components/pages/News/routes';
 
 export default [
   {
@@ -7,6 +10,13 @@ export default [
     component: DashboardLayout,
     children: [
       ...landingRoutes,
+    ],
+  },
+  {
+    path: '/news',
+    component: SingleLayout,
+    children: [
+      ...singleNewsRoutes,
     ],
   },
 ];
