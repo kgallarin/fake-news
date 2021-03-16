@@ -1,44 +1,33 @@
 <template>
   <div class="dashboard-layout">
-    <nav-bar />
-    <v-navigation-drawer class="side-drawer" app>
-      <v-divider></v-divider>
-        <me class="mb-3" />
-      <v-divider></v-divider>
-      <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content @click="handleHistory">
-            <v-list-item-title>History</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    <nav-bar has-hamburger />
     <router-view />
     <pop-gallery />
+    <v-alert v-if="error !== ''" class="error-flag" type="error" dismissible>
+      {{error}}
+    </v-alert>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import NavBar from '@/components/common/NavBar.vue';
-import Me from '@/components/partials/Me.vue';
 import PopGallery from '@/components/common/PopGallery.vue';
 
 export default {
   name: 'DashboardLayout',
   components: {
     NavBar,
-    Me,
     PopGallery,
   },
-  methods: {
-    handleHistory() {
-      this.$router.push({ name: 'history' });
-    },
+  computed: {
+    ...mapGetters({
+      error: 'app/GET_ERROR',
+    }),
   },
+  data: () => ({
+    drawer: true,
+  }),
 };
 </script>
 <style lang="scss">

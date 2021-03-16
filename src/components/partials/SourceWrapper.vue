@@ -8,26 +8,20 @@
       ></v-progress-circular>
     </div>
     <v-row v-masonry>
-      <v-col
-        v-for='(data, index) in news'
-        transition-duration="0"
-        :key='index'
-        cols='12'
-        sm='3'
-      >
-        <news-tile v-masonry-tile transition-duration="0" :item="data" />
+      <v-col v-for='(data, index) in sources' transition-duration="0" :key='index' cols='12' sm='3'>
+        <source-tile v-masonry-tile transition-duration="0" :item="data" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import NewsTile from './NewsTile.vue';
+import SourceTile from './SourceTile.vue';
 
 export default {
-  name: 'NewsWrapper',
+  name: 'SourceWrapper',
   props: {
-    news: {
+    sources: {
       type: Array,
       default: () => [],
     },
@@ -36,7 +30,7 @@ export default {
       default: false,
     },
   },
-  components: { NewsTile },
+  components: { SourceTile },
   methods: {
     isLoaded() {
       this.localLoaded = false;

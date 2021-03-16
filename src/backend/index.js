@@ -17,7 +17,7 @@ export const HTTP_METHOD = {
 export const send = async (uri, httpMethod = HTTP_METHOD.get, body = null, options = {}) => {
   const appKey = { apiKey: `${process.env.VUE_APP_API_KEY}` };
   // Append query params, if any
-  uri = appendQuery(uri, Object.assign(options.query, appKey));
+  uri = options.query ? appendQuery(uri, Object.assign(options.query, appKey)) : appendQuery(uri, appKey);
   uri = `${process.env.VUE_APP_API_URL}/${uri}`;
   let response = {};
 

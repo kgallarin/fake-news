@@ -18,11 +18,16 @@ export const mutations = {
 
 export const actions = {
   async EDIT_TITLE(ctx, payload) {
-    ctx.commit('SET_TITLE', payload);
-    const activeItem = ctx.rootGetters['news_tile/GET_ACTIVE_NEWS'];
-    const allNews = ctx.rootGetters['news/GET_NEWS'];
-    const updatedItems = allNews.map((el) => (el.title === activeItem.title ? activeItem : el));
-    ctx.commit('news/SET_NEWS', updatedItems, { root: true });
+    try {
+      ctx.commit('SET_TITLE', payload);
+      const activeItem = ctx.rootGetters['news_tile/GET_ACTIVE_NEWS'];
+      const allNews = ctx.rootGetters['news/GET_NEWS'];
+      const updatedItems = allNews.map((el) => (el.title === activeItem.title ? activeItem : el));
+      ctx.commit('news/SET_NEWS', updatedItems, { root: true });
+    } catch (e) {
+      console.log(e);
+      ctx.commit('app/SET_ERROR', e.message, { root: true });
+    }
   },
 };
 

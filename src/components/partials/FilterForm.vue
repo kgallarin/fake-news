@@ -37,6 +37,7 @@ export default {
           q: 'latest',
         });
       }
+      this.$store.dispatch('news/SET_FILTER', n);
     },
   },
   methods: {

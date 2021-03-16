@@ -22,7 +22,7 @@ export const actions = {
     try {
       await ctx.commit('SET_HISTORY', payload);
     } catch (e) {
-      console.log(e);
+      ctx.commit('app/SET_ERROR', e.message, { root: true });
     } finally {
       ctx.commit('SET_LOADING', false);
     }

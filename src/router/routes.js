@@ -4,6 +4,7 @@ import SingleLayout from '@/layouts/single.vue';
 import landingRoutes from '@/components/pages/Home/routes';
 import singleNewsRoutes from '@/components/pages/News/routes';
 import historyRoutes from '@/components/pages/History/routes';
+import sourcesRoutes from '@/components/pages/Sources/routes';
 
 export default [
   {
@@ -19,6 +20,7 @@ export default [
     children: [
       ...singleNewsRoutes,
       ...historyRoutes,
+      ...sourcesRoutes,
     ],
   },
 ];
