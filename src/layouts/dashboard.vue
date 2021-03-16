@@ -2,7 +2,20 @@
   <div class="dashboard-layout">
     <nav-bar />
     <v-navigation-drawer class="side-drawer" app>
-      <me />
+      <v-divider></v-divider>
+        <me class="mb-3" />
+      <v-divider></v-divider>
+      <v-list dense nav>
+        <v-list-item link>
+          <v-list-item-icon>
+            <v-icon>mdi-view-dashboard</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content @click="handleHistory">
+            <v-list-item-title>History</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
     <router-view />
     <pop-gallery />
@@ -20,6 +33,11 @@ export default {
     NavBar,
     Me,
     PopGallery,
+  },
+  methods: {
+    handleHistory() {
+      this.$router.push({ name: 'history' });
+    },
   },
 };
 </script>

@@ -12,7 +12,7 @@
               <v-col cols="12">
                 <v-text-field
                   label="Header Title"
-                  :counter="30"
+                  :counter="150"
                   :rules="newsTitleRule"
                   required
                   v-model="htitle"

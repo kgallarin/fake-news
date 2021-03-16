@@ -52,6 +52,7 @@ export default {
     this.onLoad();
   },
   watch: {
+    // eslint-disable-next-line
     'item.title': function (newVal) {
       if (newVal) {
         this.onLoad();
@@ -72,6 +73,7 @@ export default {
     },
     handleLink(item) {
       this.$router.push({ name: 'single-news', params: { id: item.title, data: item } });
+      this.$store.dispatch('history/ADD_HISTORY', item);
     },
   },
 };

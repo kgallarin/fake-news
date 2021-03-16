@@ -16,34 +16,25 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import NewsTile from './NewsTile.vue';
 
 export default {
   name: 'NewsWrapper',
-  components: { NewsTile },
   props: {
-    items: {
+    news: {
       type: Array,
       default: () => [],
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
-  computed: {
-    ...mapGetters({
-      news: 'news/GET_NEWS',
-      loading: 'news/GET_LOADING',
-      filter: 'news/GET_FILTER',
-    }),
-  },
+  components: { NewsTile },
   methods: {
     isLoaded() {
       this.localLoaded = false;
     },
-  },
-  created() {
-    this.$store.dispatch('news/FETCH_NEWS', {
-      q: 'latest',
-    });
   },
 };
 </script>

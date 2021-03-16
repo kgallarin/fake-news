@@ -5,6 +5,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 Vue.use(Vuetify);
 
 export default new Vuetify({
-  theme: { dark: true },
+  theme: { dark: false },
   iconfont: 'fa',
 });

@@ -2,7 +2,7 @@
   <v-app-bar
     app
     class="main-appbar">
-    <div @click.stop="routeHome" class="d-flex align-center">
+    <div @click.stop="routeHome" class="d-flex align-center app-bar-logo">
       <v-img
         alt="Vuetify Logo"
         class="shrink mr-2"
@@ -11,7 +11,7 @@
         transition="scale-transition"
         width="40"
       />
-      OeiNews
+      OEiNews
     </div>
     <v-spacer></v-spacer>
     <v-switch
