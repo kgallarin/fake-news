@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: '/fake-news/',
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',
