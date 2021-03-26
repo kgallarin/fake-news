@@ -1,4 +1,4 @@
-# For Manatal
+# Fake news
 
 Simple news gallery
 
